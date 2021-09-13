@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 public class NumberPlayList {
 	public static void main(String[] args) {
 		List<Integer> myNumberList = new ArrayList<Integer>();
@@ -25,18 +26,24 @@ public class NumberPlayList {
 		//Traversing with Anonymous Consumer interface 
 		myNumberList.forEach(new Consumer<Integer>(){
 			public void accept(Integer t) {
-				System.out.println("anonymous class Impl Value: "+t);
+				System.out.println("anonymous class Implementation Value: "+t);
 			}
 		});
 		//Explicit Lambda Function
 		Consumer<Integer> myListAction = n -> {
-			System.out.println("Explicit Lambda Impl Value: "+n);
+			System.out.println("Explicit Lambda Implementation Value: "+n);
 		};
 		myNumberList.forEach(myListAction);
 		//Implicit Lambda Function
 		myNumberList.forEach(n ->{
-			System.out.println("Implicit Lambda Impl Value: "+n);
+			System.out.println("Implicit Lambda Implementation Value: "+n);
 		});
+		//Implicit function to print double value
+		Function<Integer, Double> toDoubleFunction =Integer::doubleValue;
+		myNumberList.forEach(n -> {
+			System.out.println("Value :" +toDoubleFunction.apply(n));
+		});
+		
 
 	}
 

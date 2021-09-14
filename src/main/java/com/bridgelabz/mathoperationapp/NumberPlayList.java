@@ -85,7 +85,13 @@ public class NumberPlayList {
 				  .max((Comparator.comparing(Integer::intValue)))
 				  .orElse(null);
 		System.out.println("METHOD 10: Maximum even number : "+max);
-
+		
+		Integer sum = myNumberList.stream()
+				  .reduce(0, Integer::sum);
+		long count = myNumberList.stream()
+					 .count();
+		System.out.println("METHOD 11: Average of " +sum+ "/"+count+" = "+sum/count);
+		
 	}
 	
 }

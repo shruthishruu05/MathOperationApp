@@ -5,7 +5,11 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
 public class NumberPlayList {
+
 	public static void main(String[] args) {
 		List<Integer> myNumberList = new ArrayList<Integer>();
 		for(int index=0 ; index<7 ; index++)
@@ -53,7 +57,9 @@ public class NumberPlayList {
 		myNumberList.stream().forEach(n -> {
 			System.out.println("METHOD 8: Stream forEach value: "+n);
 		});
-
+		// process streams, apply operations and store the results using streams
+		List<Double> streamList = myNumberList.stream().map(toDoubleFunction)
+				.collect(Collectors.toList());
 	}
 
 }

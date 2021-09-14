@@ -23,7 +23,8 @@ public class NumberPlayList {
 		}
 		//Traversing with Consumer interface 
 		class MyConsumer implements Consumer<Integer>{
-			public void accept(Integer t) {
+			public void accept(Integer t) 
+			{
 				System.out.println("METHOD 2: Consumer implmentation value: "+t);
 			}
 		}

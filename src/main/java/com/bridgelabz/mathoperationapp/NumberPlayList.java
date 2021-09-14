@@ -92,6 +92,12 @@ public class NumberPlayList {
 					 .count();
 		System.out.println("METHOD 11: Average of " +sum+ "/"+count+" = "+sum/count);
 		
+			//Find all or atleast one is even in number stream
+			boolean allEven = myNumberList.stream().allMatch(isEvenFunction);
+			boolean oneEven = myNumberList.stream().anyMatch(isEvenFunction);
+			boolean noneMultiOfSix= myNumberList.stream().noneMatch(i -> i>0 && i%6 ==0);
+			System.out.println("METHOD 12: allEven: "+allEven+"\noneEven " +oneEven+ "\nnoneMultiOfSix "+noneMultiOfSix);
+		
 	}
 	
 }
